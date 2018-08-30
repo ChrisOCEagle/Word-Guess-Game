@@ -1,0 +1,11 @@
+body {
+    background: black;
+}
+
+header {
+    text-align: center;
+}
+
+.container {
+    border: 1px dashed white;
+}
