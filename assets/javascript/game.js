@@ -21,27 +21,31 @@ var computersChoicesLength = computersChoices.length,
     computersLetter = computersChoices[Math.floor(Math.random() * computersChoicesLength)];
 
 // defining an empty array for the user's guess
-var userGuess = [];
+var userGuess = [],
+    currentGuess = "";
 
 // lets get the user's key press
 document.onkeyup = function(event) {
     
     // determine what key the user chooses
-    userGuess.push(event.key)
-
-    // now for the actual game
-    if (userGuess === computersLetter && guesses !== 0) {
-        wins++
-        guesses = Math.floor(Math.random() * 12) + 1
-        computersLetter = computersChoices[Math.floor(Math.random() * computersChoicesLength)]
-    } else {
-        guesses--
-        if (guesses === 0) {
-            losses++
-            guesses = Math.floor(Math.random() * 12) + 1
-            computersLetter = computersChoices[Math.floor(Math.random() * computersChoicesLength)]
-            usersChoiceText.textContent = "Your guesses: "
-            userGuess = []
+    currentGuess = event.key.toLowerCase()
+    if ( userGuess.includes(currentGuess) === false ) {
+        userGuess.push(currentGuess)
+         // now for the actual game
+        if (currentGuess === computersLetter && guesses !== 0) {
+            wins++ // increment wins
+            guesses = Math.floor(Math.random() * 12) + 1 // guesses get a new random number after every win
+            computersLetter = computersChoices[Math.floor(Math.random() * computersChoicesLength)] // after every game the computer chooses a new number
+            userGuess = [];
+        } else {
+            guesses-- // decreases guesses
+            if (guesses === 0) {
+                losses++ // increment the losses
+                guesses = Math.floor(Math.random() * 12) + 1 // guesses get a new random number after every loss
+                computersLetter = computersChoices[Math.floor(Math.random() * computersChoicesLength)] // after every game the computer chooses a new number
+                usersChoiceText.textContent = "Your guesses: "
+                userGuess = [];
+            }
         }
     }
 
