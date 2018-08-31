@@ -6,32 +6,25 @@
         <!-- ensures proper rendering and touch zooming for mobile first styles -->
         <meta name='viewport' content='width=device-width, initial-scale=1'>
         <!-- latest compiled and minified CSS -->
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <!-- Style.css -->
         <link rel='stylesheet' type='style/css' href='assets/css/style.css'>
     </head>
     <body>
         <div class="container-fluid">
-            <div class="row">
-                <header class="col-md-12">
-                    Fantasy Hangman
-                </header>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        
-                    </div>
-                    <div class="col-md-6">
-                        
-                    </div>
-                </div>
+            <div id='game'>
+                <div id='directions-text'>Press any key to guess the letter I'm thinking of!</div>
+                <div id='computers-letter'></div>
+                <div id='users-choice'>Your guesses:</div>
+                <div id='total-guesses'>Guesses left:</div>
+                <div id='wins-text'>Wins:</div>
+                <div id='losses-text'>Losses:</div>
             </div>
         </div>
-        <!-- Latest compiled Javascript -->
-        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <!-- jQuery library -->
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <!-- Latest compiled Javascript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <!-- Game.js -->
         <script src='assets/javascript/game.js'></script>
     </body>
