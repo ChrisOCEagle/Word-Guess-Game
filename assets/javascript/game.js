@@ -29,7 +29,7 @@ document.onkeyup = function(event) {
     
     // determine what key the user chooses
     currentGuess = event.key.toLowerCase()
-    if ( userGuess.includes(currentGuess) === false ) {
+    if ( userGuess.includes(currentGuess) === false && computersChoices.includes(currentGuess) === true) {
         userGuess.push(currentGuess)
          // now for the actual game
         if (currentGuess === computersLetter && guesses !== 0) {
