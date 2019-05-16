@@ -1,11 +1,108 @@
-body {
-    background: black;
+* {
+    margin: 0;
+    padding: 0;
 }
 
-header {
+h1 {
+    font-size: 36px;
+    font-family: 'Inconsolata', monospace;
+    font-weight: bold;
     text-align: center;
+    padding: 15px;
+    margin: 15px auto 10px;
 }
 
-.container {
-    border: 1px dashed white;
+#directions-text {
+    width: 25%;
+    font-family: 'Inconsolata', monospace;
+    margin: auto;
+    font-size: 15px;
+}
+
+#objective {
+    padding: 10px 10px 10px 20px;
+}
+
+#how-to-play {
+    padding: 10px 10px 10px 20px;
+    font-style: italic;
+}
+
+#game {
+    width: 50%;
+    font-family: 'Inconsolata', monospace;
+    margin: auto;
+    padding: 40px 20px 20px 120px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider::before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider::before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+#difficulty-adjustment {
+    width: 15%;
+    margin: auto;
+    padding: 10px 60px 10px 40px;
+    position: relative;
+}
+
+#easy, #hard {
+    writing-mode: vertical-lr;
+    font-family: 'Inconsolata', monospace;
+    transform: rotate(180deg);
+    position: absolute;
+    bottom: 10px;
+}
+#easy {
+    left: 20px;
+}
+#hard {
+    right: 70px;
 }

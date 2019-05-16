@@ -5,15 +5,30 @@
         <meta charset='utf-8'>
         <!-- ensures proper rendering and touch zooming for mobile first styles -->
         <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
         <!-- latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <!-- Reset.css -->
+        <link rel='stylesheet' type='text/css' href='./assets/css/reset.css'>
         <!-- Style.css -->
-        <link rel='stylesheet' type='style/css' href='assets/css/style.css'>
+        <link rel='stylesheet' type='text/css' href='./assets/css/style.css'>
     </head>
     <body>
         <div class="container-fluid">
+            <h1 id='game-title'>The Psychic Game</h1>
+            <div id='directions-text'>
+                <div id='objective'>Guess the letter I'm thinking of!</div>
+                <div id='how-to-play'>Press the enter key to begin</div>
+            </div>
+            <div id="difficulty-adjustment" data-difficulty="easy">
+                <span id="easy">Easy</span>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                </label>
+                <span id="hard">Hard</span>
+            </div>
             <div id='game'>
-                <div id='directions-text'>Press any key to guess the letter I'm thinking of!</div>
                 <div id='computers-letter'></div>
                 <div id='users-choice'>Your guesses:</div>
                 <div id='total-guesses'>Guesses left:</div>
