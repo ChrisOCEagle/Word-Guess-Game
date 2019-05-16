@@ -54,8 +54,10 @@ function runGame() {
             if (currentGuess === computersLetter && guesses !== 0) {
                 // wins increment
                 wins++
-                // the computer chooses a new letter
-                computersLetter = computersChoices[Math.floor(Math.random() * computersChoicesLength)]
+                // show the old letter before choosing a new letter
+                revealLetter(computersLetter)
+                .then(() => computersLetter = computersChoices[Math.floor(Math.random() * computersChoicesLength)])
+                .catch(err => console.log(err));
                 // the user's guesses reset
                 userGuess = [];
                 guesses = "";
@@ -69,8 +71,10 @@ function runGame() {
                 if (guesses === 0) {
                     // lossess increment
                     losses++
-                    // the computer chooses a new letter
-                    computersLetter = computersChoices[Math.floor(Math.random() * computersChoicesLength)]
+                    // show the old letter before choosing a new letter
+                    revealLetter(computersLetter)
+                    .then(() => computersLetter = computersChoices[Math.floor(Math.random() * computersChoicesLength)])
+                    .catch(err => console.log(err));
                     // the user's guesses reset
                     userGuess = [];
                     guesses = "";
@@ -83,6 +87,13 @@ function runGame() {
             }
             displayEverything();
         };
+    });
+};
+
+function revealLetter(letter) {
+    return new Promise((resolve, reject) => {
+        computersLetterText.textContent = "The Computer's letter was: " + letter;
+        resolve(letter);
     });
 };
 
@@ -102,6 +113,7 @@ function displayEverything() {
 function initGame() {
     disableSwitch(swtch[0])
     guess(difficulty.getAttribute('data-difficulty'));
+    computersLetterText.textContent = "";
     displayEverything();
     runGame();
 };
