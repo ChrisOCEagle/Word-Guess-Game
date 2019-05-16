@@ -104,5 +104,5 @@ input:checked + .slider::before {
     left: 20px;
 }
 #hard {
-    right: 70px;
+    right: 60px;
 }
